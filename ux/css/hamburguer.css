@@ -1,0 +1,100 @@
+html {
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  background: #ff7777;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+menu {
+  margin: 0;
+  padding: 0;
+}
+menu input[type=checkbox] {
+  display: none;
+}
+menu input[type=checkbox]:checked ~ hamburger > i {
+  background-color: #0f0;
+  transform: rotate(90deg);
+}
+menu input[type=checkbox]:checked ~ hamburger > i:before {
+  transform: translate(-50%, -50%) rotate(315deg);
+}
+menu input[type=checkbox]:checked ~ hamburger > i:after {
+  transform: translate(-50%, -50%) rotate(-315deg);
+}
+menu input[type=checkbox]:checked ~ hamburger close {
+  color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+}
+menu input[type=checkbox]:checked ~ hamburger open {
+  color: transparent;
+  width: 0;
+}
+menu hamburger {
+  position: relative;
+  display: block;
+  height: 50px;
+  width: 50px;
+}
+menu hamburger:hover {
+  cursor: pointer;
+}
+menu hamburger text close,
+menu hamburger text open {
+  text-transform: uppercase;
+  font-size: .8em;
+  align-text: center;
+  position: absolute;
+  transform: translateY(50px);
+  text-align: center;
+  overflow: hidden;
+  transition: width .25s .35s, color .45s .35s;
+}
+menu hamburger text close {
+  color: transparent;
+  right: 0;
+  width: 0;
+}
+menu hamburger text open {
+  color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+}
+menu hamburger > i {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.75);
+  pointer-events: auto;
+  transition-duration: .35s;
+  transition-delay: .35s;
+}
+menu hamburger > i:before, menu hamburger > i:after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  left: 50%;
+  background: rgba(0, 0, 0, 0.75);
+  content: "";
+  transition: transform 0.35s;
+  transform-origin: 50% 50%;
+}
+menu hamburger > i:before {
+  transform: translate(-50%, -14px);
+}
+menu hamburger > i:after {
+  transform: translate(-50%, 14px);
+}
+
+/*# sourceMappingURL=hamburguer.css.map */

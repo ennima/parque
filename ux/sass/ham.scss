@@ -1,0 +1,107 @@
+$hamburguer-color1: rgba(2,32,148,.90);
+$hamburguer-color2: rgba(0,0,0,0);
+
+
+menu {
+  margin: 0;
+  padding: 0;
+  input[type=checkbox] {
+    display: none;
+    &:checked {
+      
+      & ~ hamburger {
+        > i {
+          background-color: transparent;
+          transform: rotate(90deg);
+          &:before {
+            transform: translate(-50%, -50%) rotate(315deg);
+          }
+          &:after {
+            transform: translate(-50%, -50%) rotate(-315deg);
+          }
+        }
+        
+        close {
+          color: $hamburguer-color1;
+          width: 100%;
+        }
+        open {
+          color: $hamburguer-color2;
+          width: 0;
+        }
+      }
+    }
+  }
+  
+  $height-line: 5px;
+
+  hamburger {
+    position: relative;
+    display: block;
+    height: 50px;
+    width: 50px;
+    padding-left: 15%;
+    &:hover {
+      cursor: pointer;
+    }
+    text {
+      close,
+      open {
+      	display:none;
+        text-transform: uppercase;
+        font-size: .8em;
+        align-text: center;
+        position: absolute;
+        transform: translateY(50px);
+        text-align: center;
+        overflow: hidden;
+        transition: width .25s .35s, color .45s .35s;
+      }
+      close {
+        color: $hamburguer-color2;
+        right: 0;
+        width: 0;
+        
+      }
+      open {
+        color: $hamburguer-color1;
+        width: 100%;
+      }
+    }
+    > i {
+      position: absolute;
+      width: 100%;
+      height: $height-line;
+      top: 50%;
+      background-color: $hamburguer-color1;
+      pointer-events: auto;
+      transition-duration: .35s;
+      transition-delay: .35s;
+      &:before,
+      &:after {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: $height-line;
+        left: 50%;
+        background: $hamburguer-color1;
+        content: "";
+        transition: transform 0.35s;
+        transform-origin: 50% 50%;
+      }
+      &:before {
+        transform: translate(-50%, -14px);
+      }
+      &:after {
+        transform: translate(-50%, 14px);
+      }
+    }
+  }
+
+ //  @media (max-width: 412px){
+	// hamburger{
+	// 	 height: 50px;
+ //    	 width: 40px;
+	// }
+ //  }
+}
