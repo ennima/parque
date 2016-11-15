@@ -12,6 +12,7 @@
 </head>
 <body>
 	<header>
+		<!-- Mobile Menu -->
 		<div id="header-top-nav" class="row">
 			<div id="hamburguer-nav" class="col-xs-3">
 				<menu>
@@ -36,8 +37,7 @@
 
 			<div id="contacto-nav" class="col-xs-3">
 				<i class="fa fa-phone fa-3x"></i>
-			</div>
-				
+			</div>				
 		</div>
 
 		<div id="header-bottom-nav" class="row">
@@ -60,9 +60,62 @@
 			</div>			
 		</div>
 
-		<div id="main-menu-nav" class="row">
-			
+		<div id="main-menu-nav">
+			<div id="section-menu" class="row">
+				<nav>
+					<ul>
+						<li>
+							<a href="">
+								<i class="fa fa-header fa-3x"></i>
+								<p>Historia</p>
+							</a>
+						</li>
+
+						<li>
+							<a href="">
+								<i class="fa fa-calendar fa-3x"></i>
+								<p>Eventos</p>
+							</a>
+						</li>
+
+						<li>
+							<a href="">
+								<i class="fa fa-cutlery fa-3x"></i>
+								<p>restaurante</p>
+							</a>
+						</li>
+
+						<li>
+							<a href="">
+								<i class="fa fa-map-marker fa-3x"></i>
+								<p>¿Cómo llegar?</p>
+							</a>
+						</li>
+
+						<li>
+							<a href="">
+								<i class="fa fa-child fa-3x"></i>
+								<p>Actividades</p>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div id="social-menu" class="row">
+				<div id="fb" class="col-xs-4 social-item" style="color: #8b9dc3;">
+					<i class="fa fa-facebook-official fa-2x"></i>
+				</div>
+
+				<div id="insta" class="col-xs-4 social-item">				
+					<i class="fa fa-instagram fa-2x"></i>
+				</div>
+
+				<div id="youtube" class="col-xs-4 social-item">
+					<i class="fa fa-youtube-play fa-2x" style="color:#b31217;"></i>
+				</div>
+			</div>
 		</div>
+		<!-- End Mobile Menu -->
 	</header>
 	<section>
 		
@@ -70,5 +123,26 @@
 	  
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// var logo = document.getElementById("main-menu-nav");
+			// TweenLite.to(logo, 2, {top:"440px", ease:Bounce.easeOut});
+			var mobile_menu_open = false;
+			$("#hamburguer-nav").on("tap mousedown",function(){
+				console.log(mobile_menu_open);
+					if(mobile_menu_open == true){
+						TweenLite.to($("#main-menu-nav"), 2, {top:"-400px", ease:Power1.easeIn});
+						mobile_menu_open = false;
+					}else{
+						TweenLite.to($("#main-menu-nav"), 2, {top:"0px", ease:Bounce.easeOut});
+						mobile_menu_open = true;
+					}		
+					
+			
+			});
+
+		});
+		
+	</script>
 </body>
 </html>

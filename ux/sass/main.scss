@@ -3,9 +3,17 @@ body
 	background:#333;
 }
 
+
+// Menu mobile
 $nav-color: #fff;
 $hamburguer-color1: rgba(2,32,148,.90);
 
+$menu-bg-color:rgba(255,255,255,0.90);
+$menu-item-color:rgba(32,153,213,1);
+$menu-icon-color:$nav-color;
+$menu-text-color:$nav-color;
+$menu-social-color:$nav-color;
+//                                   Header top
 #header-top-nav
 {
 	background-color: $nav-color;
@@ -55,7 +63,7 @@ $hamburguer-color1: rgba(2,32,148,.90);
 
 
 
-
+//                           Header Bottom
 #header-bottom-nav
 {
 	background-color: $nav-color;
@@ -84,6 +92,97 @@ $hamburguer-color1: rgba(2,32,148,.90);
 	text-decoration:none;
 	display:inline-block;
 	line-height: 32px;
+}
+
+
+
+//                        Main Menu Nav
+#main-menu-nav{
+	// background: #33f;
+
+	// width:100%;
+	height:300px;
+
+	position: relative;
+    top: -450px;
+    z-index: -1;
+}
+
+#section-menu{
+	background:$menu-bg-color;
+	height:250px;
+}
+
+#social-menu{
+	background:$menu-social-color;
+	height:50px;
+}
+
+
+#section-menu{
+	// background:#3f3;
+}
+nav{
+	width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+nav ul {
+	// background:#333;
+}
+
+nav ul li {
+	background:$menu-item-color;
+
+    text-align: center;
+    text-decoration: none;
+    float: left;
+    width: 28%;
+    height: 108px;
+    list-style-type: none;
+    margin: 3px;
+    padding-top: 10px;
+    border-radius: 4px;
+}
+nav ul li a i{
+	// background:#ff0;
+	color:$menu-icon-color;
+}
+nav ul li a p{
+	// background:#fff;
+	margin-top:3px;
+	color:$menu-text-color;
+}
+
+.social-item{
+	display: -webkit-box;
+  	display: -webkit-flex;
+  	display: -ms-flexbox;
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    left: 5%;
+}
+
+#fb{
+	padding-right: 10%;
+}
+#insta{
+	padding-right: 15%;
+}
+#youtube{
+	// background:#fff;
+	padding-right: 19%;
 }
 
 .row {
